@@ -4,7 +4,8 @@ import android.net.Uri;
 import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.signalr.InputStreamConverter;
+
+import org.soheil.supersignalr.InputStreamConverter;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
