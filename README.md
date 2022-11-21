@@ -238,7 +238,7 @@ class so we used it with
 ```bash 
 Gson
 ``` 
-to can have it as a json data ... So easily !
+to can have it as a json data ... So easily 😎
 
 ## Contribution and Issues
 
