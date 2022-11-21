@@ -32,7 +32,7 @@ You should have a SignalR server which was powered by asp .net core.
 You can follow all of these next steps from sample app :)
 
 * The first thing that we need to do is to initialize the library so add this line of code to your main application class of project :
-```
+```java
  @Override
    public void onCreate() {
       super.onCreate();
