@@ -200,6 +200,18 @@ public class SignalRService extends Service implements HubConnectionListener {
 }
    ```
 
+* In above class we needed to create two important variables :
+```bash 
+HUB_URL
+```
+and 
+```bash 
+USER_TOKEN
+```
+
+You should replace your values with them .
+
+
 ## Contribution and Issues
 
 If you would like to participate in this project please create issue or use [Links](#links) section.
