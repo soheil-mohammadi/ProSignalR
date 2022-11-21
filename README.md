@@ -20,17 +20,26 @@ Please add this into your build.gradle file (app module) :
 
 ```
 implementation 'com.enefce.libraries.prosignalr:1.0.0'
-
 ```
 
 ## Prerequisites
 
-Working .net core SignalR server.
+You should have a SignalR server which was powered by asp .net core.
 
 
 ## Getting Started
 
-In this description we use connection to simple server with Bearer Token.
+You can follow all of these next steps from sample app :)
+
+* The first thing that we need to do is to initialize the library so add this line of code to your main application class of project :
+```
+ @Override
+   public void onCreate() {
+      super.onCreate();
+      instance = this;
+      SuperSignalR.init(this);
+   }
+   ```
 
 
 ## Contribution and Issues
