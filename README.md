@@ -218,6 +218,28 @@ You should replace your values with them .
   mHubConnection.addListener(SignalRService.this);
 ```
 
+* For creating And registering custom events  :
+```java
+  private void registerSimpleEvent () {
+        mHubConnection.subscribeToEvent("SimpleEvent", msg -> {
+
+        PlansModel plan = getModelClass(msg.getArguments() , PlansModel.class);
+        Log.e(TAG, "registerSimpleEvent: " + plan.toString() );
+
+        });
+        }
+```
+
+As you can see our connection variable fetches data and converts into 
+```bash 
+HubMessage
+``` 
+class so we used it with 
+```bash 
+Gson
+``` 
+to can have it as a json data ... So easily !
+
 ## Contribution and Issues
 
 If you would like to participate in this project please create issue or use [Links](#links) section.
