@@ -211,6 +211,12 @@ USER_TOKEN
 
 You should replace your values with them .
 
+* Then we created an instance of __MainConnection__ class and set listener for it :
+
+```java
+  mHubConnection = new MainConnection(HUB_URL, USER_TOKEN);
+  mHubConnection.addListener(SignalRService.this);
+```
 
 ## Contribution and Issues
 
