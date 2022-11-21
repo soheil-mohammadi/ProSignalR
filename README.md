@@ -9,19 +9,37 @@ A Powerful library for Making SignalR Connection Over Android Platform :)
 ## Table of content
 
 - [Installation](#installation)
-- [Prerequisites](#installation)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Contribution](#contribution-and-issues)
+- [Links](#links)
+
+## Installation
+
+Please add this into your build.gradle file (app module) :
+
+```
+implementation 'com.enefce.libraries.prosignalr:1.0.0'
+
+```
+
+## Prerequisites
+
+Working .net core SignalR server.
+
 
 ## Getting Started
 
 In this description we use connection to simple server with Bearer Token.
 
-## Installation
+
+## Contribution and Issues
+
+If you would like to participate in this project please create issue or use [Links](#links) section.
 
 
-```
-implementation 'com.enefce.libraries.prosignalr:1.0.0'
-```
+## Links
 
-### Prerequisites
-
-Working .net core SignalR server.
+* [Contact](https://t.me/soheil_4ever)
+* [Issue tracker](https://github.com/soheil-mohammadi/ProSignalR/issues)
+* [Source code](https://github.com/soheil-mohammadi/ProSignalR)
