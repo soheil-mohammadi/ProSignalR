@@ -2,8 +2,9 @@
 
 # ProSignalR
 
-A Powerful library for Making SignalR Connection Over Android Platform :)
-It has got  __Auto Reconnection__ feature as well . Enjoy it 🔥
+A Powerful library for Making SignalR Connection Over Android Platform :) <br />
+It has got  __Auto Reconnection__ feature as well . <br />
+Enjoy it 🔥
 
 
 :star: Star us on GitHub — it motivates us a lot!
