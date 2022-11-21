@@ -18,7 +18,7 @@ A Powerful library for Making SignalR Connection Over Android Platform :)
 
 Please add this into your build.gradle file (app module) :
 
-```
+```groovy
 implementation 'com.enefce.libraries.prosignalr:1.0.0'
 ```
 
