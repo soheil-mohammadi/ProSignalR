@@ -24,13 +24,19 @@ public class SocketManager {
 
     public void start (HubConnectionListener listener) {
         this.listener = listener;
-        Intent intent = new Intent();
-        intent.setClass(App.getInstance().getContext(), SignalRService.class);
-        App.getInstance().getContext().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+
+        if(mService != null) {
+            startSignalR();
+        }else {
+            Intent intent = new Intent();
+            intent.setClass(App.getInstance().getContext(), SignalRService.class);
+            App.getInstance().getContext().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+        }
+
     }
 
     public void stop () {
-       // Log.e(TAG, "stop: !!!" );
+        // Log.e(TAG, "stop: !!!" );
         App.getInstance().getContext().unbindService(this.mConnection);
         if(mService != null)
             mService.closeConnection();
@@ -41,6 +47,16 @@ public class SocketManager {
             mService.sendMessage(event , parameters);
     }
 
+    public boolean isConnected () {
+        return mService.isConnected();
+    }
+
+
+    private void startSignalR () {
+        mService.setCustomListener(listener);
+        mService.startSignalR();
+    }
+
     private final ServiceConnection mConnection = new ServiceConnection() {
 
         @Override
@@ -48,7 +64,7 @@ public class SocketManager {
                                        IBinder service) {
             SignalRService.LocalBinder binder = (SignalRService.LocalBinder) service;
             mService = binder.getService();
-            mService.setCustomListener(listener);
+            startSignalR();
             mBound = true;
         }
 

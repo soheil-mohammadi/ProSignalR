@@ -3,7 +3,9 @@ package org.soheil.supersignalr.services;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -63,9 +65,14 @@ public class SignalRService extends Service implements HubConnectionListener {
         isConnected = true;
 
         if(this.customListener != null)
-            this.customListener.onConnected();
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    SignalRService.this.customListener.onConnected();
+                    Log.e(TAG, "onConnected: !!!" );
+                }
+            });
 
-        Log.e(TAG, "onConnected: !!!" );
     }
 
     @Override
@@ -74,22 +81,38 @@ public class SignalRService extends Service implements HubConnectionListener {
         isConnected = false;
 
         if(this.customListener != null)
-            this.customListener.onDisconnected();
-        Log.e(TAG, "onDisconnected: !!!" );
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    SignalRService.this.customListener.onDisconnected();
+                    Log.e(TAG, "onDisconnected: !!!" );
+                }
+            });
     }
 
     @Override
     public void onMessage(HubMessage message) {
         if(this.customListener != null)
-            this.customListener.onMessage(message);
-        Log.e(TAG, "onMessage: " + message.toString() );
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    SignalRService.this.customListener.onMessage(message);
+                    Log.e(TAG, "onMessage: " + message.toString() );
+                }
+            });
     }
 
     @Override
     public void onError(Exception exception) {
         if(this.customListener != null)
-            this.customListener.onError(exception);
-        Log.e(TAG, "onError: "  + exception.getMessage() );
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    SignalRService.this.customListener.onError(exception);
+                    Log.e(TAG, "onError: "  + exception.getMessage() );
+                }
+            });
+
     }
 
 
@@ -109,7 +132,7 @@ public class SignalRService extends Service implements HubConnectionListener {
     }
 
 
-    private void startSignalR() {
+    public void startSignalR() {
 
         mHubConnection = new MainConnection(HUB_URL, USER_TOKEN);
 
