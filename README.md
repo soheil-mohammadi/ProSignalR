@@ -265,6 +265,6 @@ If you would like to participate in this project please create issue or use [Lin
 
 ## Links
 
-* [Contact](https://t.me/soheil_4ever)
+* [Contact](https://www.linkedin.com/in/soheil-mohammadi-16412a167)
 * [Issue tracker](https://github.com/soheil-mohammadi/ProSignalR/issues)
 * [Source code](https://github.com/soheil-mohammadi/ProSignalR)
