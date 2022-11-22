@@ -16,6 +16,7 @@ Enjoy it 🔥
 - [Getting Started](#getting-started)
 - [Receiving Message](#receiving-message)
 - [Sending Message](#sending-message)
+- [Auto Reconnection](#auto-reconnect-feature)
 - [Contribution](#contribution-and-issues)
 - [Links](#links)
 
@@ -221,7 +222,7 @@ You should replace your values with them .
 ```
 
 ## Receiving Message
-* To get receiving and registering custom events  :
+* To receive and register custom events  :
 ```java
   private void registerSimpleEvent () {
         mHubConnection.subscribeToEvent("SimpleEvent", msg -> {
@@ -252,6 +253,10 @@ to can have it as a json data ... So easily 😎
         mHubConnection.invoke(event , parameters);
         }
 ```
+
+## Auto Reconnect Feature
+In this library as default it detects changing network states and will try to do reconnection automatically 😍 <br />
+
 
 ## Contribution and Issues
 
