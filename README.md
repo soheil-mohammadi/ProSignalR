@@ -14,6 +14,8 @@ Enjoy it 🔥
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
+- [Receiving Message](#receiving-message)
+- [Sending Message](#sending-message)
 - [Contribution](#contribution-and-issues)
 - [Links](#links)
 
@@ -218,7 +220,8 @@ You should replace your values with them .
   mHubConnection.addListener(SignalRService.this);
 ```
 
-* For creating And registering custom events  :
+## Receiving Message
+* To get receiving and registering custom events  :
 ```java
   private void registerSimpleEvent () {
         mHubConnection.subscribeToEvent("SimpleEvent", msg -> {
@@ -239,6 +242,16 @@ class so we used it with
 Gson
 ``` 
 to can have it as a json data ... So easily 😎
+
+## Sending Message
+* To send custom messages you should set __EVENT NAME__ and __OBJECT__  parameters which you want to be  :
+
+```java
+    public void sendMessage (String event, Object... parameters) {
+        if (mHubConnection != null && isConnected())
+        mHubConnection.invoke(event , parameters);
+        }
+```
 
 ## Contribution and Issues
 
